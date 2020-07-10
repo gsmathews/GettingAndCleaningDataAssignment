@@ -63,4 +63,8 @@ head(df)
 
 average_subject_activity <- function(df){
   df %>% group_by(Training.Label.Desc, Subject) %>% summarise(mean(1:55))
+  
+  return(df)
 }
+
+write.table(df, file = "tidydata.txt", row.names = FALSE)
